@@ -1,0 +1,48 @@
+﻿Build started 16/03/2016 21:50:26.
+     1>Project "C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\Collision\Collision.vcxproj" on node 2 (Build target(s)).
+     1>FxCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"main" /T ps_5_0 /Fo "..\bin\data\PSLitNoTex.cso" /Od /Zi ..\FX\PSLitNoTex.hlsl 
+         compilation object save succeeded; see C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\bin\data\PSLitNoTex.cso
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"main" /T ps_5_0 /Fo "..\bin\data\PSLitTex.cso" /Od /Zi ..\FX\PSLitTex.hlsl 
+         compilation object save succeeded; see C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\bin\data\PSLitTex.cso
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"main" /T ps_5_0 /Fo "..\bin\data\PSUnlitNoTex.cso" /Od /Zi ..\FX\PSUnlitNoTex.hlsl 
+         compilation object save succeeded; see C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\bin\data\PSUnlitNoTex.cso
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"main" /T ps_5_0 /Fo "..\bin\data\PSUnlitTex.cso" /Od /Zi ..\FX\PSUnlitTex.hlsl 
+         compilation object save succeeded; see C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\bin\data\PSUnlitTex.cso
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\fxc.exe /nologo /E"main" /T vs_5_0 /Fo "..\bin\data\TextureVS.cso" /Od /Zi ..\FX\TextureVS.hlsl 
+         compilation object save succeeded; see C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\bin\data\TextureVS.cso
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\DirectXTK\Inc /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt /wd4005 BallSim.cpp D3D.cpp D3DUtil.cpp FX.cpp Game.cpp GeometryBuilder.cpp Input.cpp main.cpp Mesh.cpp Model.cpp ShaderTypes.cpp WindowUtils.cpp
+         WindowUtils.cpp
+         ShaderTypes.cpp
+         Model.cpp
+         Mesh.cpp
+         main.cpp
+         Input.cpp
+         GeometryBuilder.cpp
+         Game.cpp
+         FX.cpp
+         D3DUtil.cpp
+         D3D.cpp
+         BallSim.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\Collision.exe" /INCREMENTAL /NOLOGO Xinput9_1_0.lib assimpd.lib d3dcompiler.lib d3d11.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"../bin/Collision.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../bin/Collision.lib" /MACHINE:X86 Debug\BallSim.obj
+         Debug\D3D.obj
+         Debug\D3DUtil.obj
+         Debug\FX.obj
+         Debug\Game.obj
+         Debug\GeometryBuilder.obj
+         Debug\Input.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\Model.obj
+         Debug\ShaderTypes.obj
+         Debug\WindowUtils.obj
+         "C:\Users\Kris\Desktop\PfG\PFG-assignment\DirectXTK\Bin\Desktop_2013\Win32\Debug\DirectXTK.lib"
+         Collision.vcxproj -> C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\Collision\../bin/Collision.exe
+     1>Done Building Project "C:\Users\Kris\Desktop\PfG\PFG-assignment\the game\Collision\Collision.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.04
