@@ -135,7 +135,7 @@ void BallSim::Update(float dTime, const Vector3& camPos, MouseAndKeys& input, Mo
 void BallSim::Render(FX::MyFX& fx, float dTime)
 {
 	float alpha = 0.5f + sinf(mAngle * 2) * 0.5f;
-	Vector3 mBallColour = Vector3(0.f, 10.f, 0.f);
+	Vector3 mBallColour = Vector3(10.f, 10.f, 10.f);
 	FX::SetupPointLight(1, true, mBall.GetPosition(), mBallColour, Vector3(0.f, 0.5f, 0.5f), Vector3(0, 0, 0), 15.f, 1.f);
 	fx.Render(mBall, gd3dImmediateContext);
 }

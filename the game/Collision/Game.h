@@ -33,8 +33,8 @@ public:
 	
 	
 	//camera
-	const DirectX::SimpleMath::Vector3 mDefCamPos = DirectX::SimpleMath::Vector3(0, 0.5f, -5);
-	DirectX::SimpleMath::Vector3 mCamPos = DirectX::SimpleMath::Vector3(0, 0.5f, -5);
+	const DirectX::SimpleMath::Vector3 mDefCamPos = DirectX::SimpleMath::Vector3(0, 0, -3);
+	DirectX::SimpleMath::Vector3 mCamPos = DirectX::SimpleMath::Vector3(0, 0, -3);
 	//ensure each mesh is loaded and release exactly once
 	MeshManager mMeshMgr;
 	//game models that reference meshes
@@ -72,6 +72,8 @@ private:
 	MouseAndKeys mMKInput;
 	Gamepad mGamepad;
 	BallSim mBallSim;
+	Model mBackground;
+	float gAngle;
 };
 
 #endif

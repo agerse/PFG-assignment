@@ -22,12 +22,15 @@ void Game::OnResize(int screenWidth, int screenHeight)
 void Game::Load()
 {
 
-	//wood floor
-	mQuad.Initialise(BuildQuad(mMeshMgr));
-	MaterialExt *pMat = &mQuad.GetMesh().GetSubMesh(0).material;
+	//background
+	mBackground.Initialise(BuildQuad(mMeshMgr));
+	MaterialExt *pMat = &mBackground.GetMesh().GetSubMesh(0).material;
 	pMat->gfxData.Set(Vector4(0.9f, 0.8f, 0.8f, 0), Vector4(0.9f, 0.8f, 0.8f, 0), Vector4(0, 0, 0, 1));
 	pMat->pTextureRV = mFX.mCache.LoadTexture("floor.dds", true, gd3dDevice);
 	pMat->texture = "floor";
+	mBackground.GetScale() = Vector3(0.25f, 0.25f, 0.25f);
+	mBackground.GetPosition() = Vector3(1, -0.5f, -1.f);
+	mBackground.SetOverrideMat(pMat);
 	mLoadData.loadedSoFar++;
 
 	//torch
@@ -128,22 +131,24 @@ void Game::Update(float dTime)
 	mBallSim.Input(mMKInput);
 	const float camInc = 10.f * dTime;
 
-	/*if (mMKInput.IsPressed(VK_A))
+	if (mMKInput.IsPressed(VK_I))
 	mCamPos.y += camInc;
-	else if(mMKInput.IsPressed(VK_Z))
+	else if(mMKInput.IsPressed(VK_K))
 	mCamPos.y -= camInc;
-	else if (mMKInput.IsPressed(VK_D))
+	else if (mMKInput.IsPressed(VK_J))
 	mCamPos.x -= camInc;
-	else if (mMKInput.IsPressed(VK_F))
+	else if (mMKInput.IsPressed(VK_L))
 	mCamPos.x += camInc;
-	else if (mMKInput.IsPressed(VK_W))
+	else if (mMKInput.IsPressed(VK_N))
 	mCamPos.z += camInc;
-	else if (mMKInput.IsPressed(VK_S))
-	mCamPos.z -= camInc;*/
+	else if (mMKInput.IsPressed(VK_M))
+	mCamPos.z -= camInc;
 
 	mCamPos.x += mGamepad.GetState(0).leftStickX * dTime;
 	mCamPos.z += mGamepad.GetState(0).leftStickY * dTime;
 	mCamPos.y += mGamepad.GetState(0).rightStickY * dTime;
+
+	gAngle += dTime * 0.5f;
 
 	mBallSim.Update(dTime, mCamPos, mMKInput, mRock);
 }
@@ -177,10 +182,12 @@ void Game::Render(float dTime)
 //	mEnemy.Render(mFX, dTime);
 
 	//floor
-	mQuad.GetPosition() = Vector3(0, 0, 0);
-	mQuad.GetRotation() = Vector3(0, 0, 0);
-	mQuad.GetScale() = Vector3(3, 1, 3);
-	//mFX.Render(mQuad, gd3dImmediateContext);
+	mBackground.GetPosition() = Vector3(0, 0, 5);
+	mBackground.GetRotation() = Vector3(180, 0, 0);
+	mBackground.GetScale() = Vector3(6, 1, 5);
+	mBackground.HasOverrideMat()->texTrsfm.translate = Vector2(0,gAngle);
+	
+	mFX.Render(mBackground, gd3dImmediateContext);
 
 
 	//mFX.Render(mRock, gd3dImmediateContext);
